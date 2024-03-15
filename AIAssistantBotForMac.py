@@ -105,7 +105,7 @@ class AIAssistantBotForMac:
 
 if __name__ == "__main__":
     # for test the basic function
-    bot = AIAssistantBotForWin()
+    bot = AIAssistantBotForMac()
     pre_text = "Pythoon iss soo ccool"
     print(bot.fix_text(pre_text))
     pre_text = "今天天气很不错"

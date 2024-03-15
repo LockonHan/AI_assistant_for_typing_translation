@@ -3,6 +3,7 @@ from pynput import keyboard
 from AIAssistantBotForWin import AIAssistantBotForWin
 from AIAssistantBotForMac import AIAssistantBotForMac
 
+
 def get_os():
     if "darwin" in sys.platform:
         return "mac"
@@ -20,6 +21,8 @@ if __name__ == "__main__":
         bot = AIAssistantBotForMac()
     else:
         print("This application currently does not support your operating system. Please stay tuned for updates.")
+        # 退出程序
+        exit()
 
     # 创建键盘监听器
     with keyboard.Listener(on_press=bot.handle_key_press) as listener:
