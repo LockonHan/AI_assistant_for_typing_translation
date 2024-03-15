@@ -36,7 +36,7 @@ python main.py
 ### 5. Hotkeys
 Hotkeys you can then press:
 ```
-- F8: Fixes the current selection
+- F8: quit the script
 - F9: Fixes the current line (without having to select the text)
 - F10: Fixes the current selection
 - F11: translate the current line(without having to select the text)
