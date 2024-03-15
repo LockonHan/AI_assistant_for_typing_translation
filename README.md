@@ -21,10 +21,12 @@ pip install pynput pyperclip langchain langchain_community python-dotenv pyautog
 ```
 
 ### 3. Configure it
-Configure .env to let it konw where and which LLM to communicate with
+Configure .env to let it konw where and which LLM to communicate with. 
+To improve the consistency of results, you can adjust the model temperature. The lower the temperature is, the better the consistency is. The default value is 0.3.
 ```
 OLLAMA_ENDPOINT = "http://localhost:11434"
 OLLAMA_MODEL = "qwen:7b"
+OLLAMA_TEMPERATURE = "0.2"
 ```
 
 ### 4. Run it
