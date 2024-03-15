@@ -16,9 +16,12 @@ class AIAssistantBotForWin:
         self.env = dotenv_values('.env')
         self.prompt_fix = PromptTemplate.from_template(FIX_TEMPLATE)
         self.prompt_translate = PromptTemplate.from_template(TRANSLATE_TEMPLATE)
+
         self.ollama_endpoint = self.env.get("OLLAMA_ENDPOINT", "http://localhost:11434")
         self.ollama_model = self.env.get("OLLAMA_MODEL", "qwen:7b")
-        self.model = Ollama(base_url=self.ollama_endpoint, model=self.ollama_model)
+        self.temperature = self.env.get("OLLAMA_TEMPERATURE", "0.3")
+        self.model = Ollama(base_url=self.ollama_endpoint, model=self.ollama_model, temperature=float(self.temperature))
+
         self.parser = StrOutputParser()
         self.fix_text_chain = {"text": RunnablePassthrough()} | self.prompt_fix | self.model | self.parser
         self.translate_text_chain = {"text": RunnablePassthrough()} | self.prompt_translate | self.model | self.parser
