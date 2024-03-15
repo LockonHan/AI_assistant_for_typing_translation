@@ -20,7 +20,6 @@ if __name__ == "__main__":
         bot = AIAssistantBotForMac()
     else:
         print("This application currently does not support your operating system. Please stay tuned for updates.")
-    "I love you so much."
 
     # 创建键盘监听器
     with keyboard.Listener(on_press=bot.handle_key_press) as listener:
